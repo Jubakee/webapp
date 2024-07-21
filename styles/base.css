@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,10 +17,11 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     max-width: 80%; /* Limit the maximum width to 80% of the viewport */
     margin: 0 auto; /* Center the container */
+    position: relative; /* Position relative to manage absolute positioning of inner elements */
 }
 
 header {
@@ -27,7 +29,6 @@ header {
     padding: 10px;
     width: 100%;
     max-width: 80%; /* Limit the maximum width to 80% of the viewport */
-
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;
@@ -35,8 +36,8 @@ header {
     position: fixed;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Center the footer horizontally */
-
+    transform: translateX(-50%); /* Center the header horizontally */
+    z-index: 1; /* Ensure header is on top of other content */
 }
 
 main {
@@ -44,7 +45,7 @@ main {
     flex: 1;
     width: 100%;
     padding: 20px;
-    margin-top: 30px; /* Adjust based on header height */
+    margin-top: 60px; /* Adjust based on header height */
     margin-bottom: 60px; /* Adjust based on footer height */
     overflow-y: auto;
 }
@@ -66,6 +67,7 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%); /* Center the footer horizontally */
+    z-index: 1; /* Ensure footer is on top of other content */
 }
 
 .tab {
