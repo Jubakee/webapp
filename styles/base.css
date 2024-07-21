@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+    color: black;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    touch-action: none; /* Prevent default touch actions */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    display: none;
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px; /* Adjust based on header height */
+    margin-bottom: 60px; /* Adjust based on footer height */
+    overflow-y: auto;
+}
+
+main.active {
+    display: block;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.tab {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content horizontally and vertically within the tab */
+    text-align: center; /* Center text horizontally */
+}
+
+.active-tab {
+    font-weight: bold;
+    color: #000;
+}
