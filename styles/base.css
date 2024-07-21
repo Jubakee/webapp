@@ -19,6 +19,8 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100%;
+    max-width: 80%; /* Limit the maximum width to 80% of the viewport */
+    margin: 0 auto; /* Center the container */
 }
 
 header {
@@ -52,13 +54,15 @@ footer {
     background-color: #f8f8f8;
     padding: 10px;
     width: 100%;
+    max-width: 80%; /* Limit the maximum width to 80% of the viewport */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the footer horizontally */
 }
 
 .tab {
