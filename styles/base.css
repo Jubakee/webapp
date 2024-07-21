@@ -10,7 +10,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    touch-action: none; /* Prevent default touch actions */
     overflow: hidden; /* Prevent scrolling */
 }
 
@@ -27,13 +26,17 @@ header {
     background-color: #f8f8f8;
     padding: 10px;
     width: 100%;
+    max-width: 80%; /* Limit the maximum width to 80% of the viewport */
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the footer horizontally */
+
 }
 
 main {
