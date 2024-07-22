@@ -10,8 +10,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    touch-action: none; /* Prevent default touch actions */
-    overflow: hidden; /* Prevent scrolling */
 }
 
 
@@ -50,10 +48,8 @@ main {
 
 main.active {
     display: flex; /* Only display the active tab */
-    overflow: hidden;
-    touch-action: none; /* Disable swipe gestures */
-    margin-top: 60px; /* Adjust based on header height */
-    margin-bottom: 60px; /* Adjust based on footer height */
+    margin-top: 40px; /* Adjust based on header height */
+    margin-bottom: 40px; /* Adjust based on footer height */
 }
 footer {
     background-color: #f8f8f8;

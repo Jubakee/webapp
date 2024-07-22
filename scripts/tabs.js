@@ -24,3 +24,4 @@ function showTab(tabId) {
 }
 
 document.addEventListener('DOMContentLoaded', setupTabEventListeners);
+
