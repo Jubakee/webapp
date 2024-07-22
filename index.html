@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avatar</title>
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/tab1.css">
+
 </head>
 <body>
     <header id="header">
@@ -24,8 +26,27 @@
     </header>
 
     <main id="tab1" class="active"> 
-        <h2>Earn</h2>
+        <div id="tab1-container">
+        <div id="image-container">
+            <button id="clickable-coin">
+                <img width="240" src="./assets/coin.png" alt="coin">
+            </button>
+        </div>
+
+        <div id="energy-bar-container">
+            <div id="energy-bar">
+                <div id="energy-fill"></div>
+            </div>
+            <div id="energy-value-container">
+                <span id="energy-value">
+                    <span id="energy-emoji">⚡</span>
+                    <span id="energy-count">1000</span> / <span id="max-energy">1000</span>
+                </span>
+            </div>
+        </div>
+    </div>
     </main>
+
     <main id="tab2">
         <h2>Shop</h2>
     </main>
