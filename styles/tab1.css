@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 10px; /* Padding for spacing from header and footer */
 }
 
 .grid-container {
@@ -16,6 +15,7 @@
     grid-template-rows: 1fr 1fr 1fr; /* Each row will take up an equal fraction of the height */
     height: 80vh; /* Full height of the viewport */
     width: 100%; /* Full width of the viewport */
+    margin-top: 60px;
 }
 
 .grid-item {
@@ -27,6 +27,7 @@
 }
 
 .grid-item:last-child {
+    
     justify-content: center; /* Center content vertically */
 }
 
@@ -36,10 +37,12 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+
 }
 
 /* Container for the coin image */
 #image-container {
+    
     display: flex;
     justify-content: center;
     align-items: center;
