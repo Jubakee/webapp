@@ -51,7 +51,15 @@ function updateGameState(touchCount) {
 function animateCoin() {
     const coinImage = document.querySelector('#clickable-coin img');
     if (coinImage) {
-        coinImage.classList.add('clicked');
+        // Remove the class if it exists to reset the animation
+        coinImage.classList.remove('clicked');
+        
+        // Use requestAnimationFrame to ensure the class is removed before adding it again
+        requestAnimationFrame(() => {
+            coinImage.classList.add('clicked');
+        });
+
+        // Remove the class after the animation duration
         setTimeout(() => {
             coinImage.classList.remove('clicked');
         }, 300); // Duration should match the transition duration in CSS
