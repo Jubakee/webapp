@@ -26,11 +26,6 @@
     align-items: center;
 }
 
-.grid-item:last-child {
-    
-    justify-content: center; /* Center content vertically */
-}
-
 #bottom-content {
     display: flex;
     flex-direction: column;
