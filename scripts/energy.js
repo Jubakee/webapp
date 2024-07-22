@@ -8,7 +8,7 @@ function rechargeEnergy() {
         energy = Math.min(energy + rechargeAmount, maxEnergy);
         lastUpdateTime += Math.floor(elapsedTime / rechargeInterval) * rechargeInterval; // Adjust lastUpdateTime correctly
         updateEnergyBar();
-        saveEnergy();
+        saveData();
     }
 }
 
