@@ -23,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
     margin-bottom: 40px; /* Space between image and energy bar */
 }
 
