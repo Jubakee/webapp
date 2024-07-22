@@ -5,14 +5,15 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    touch-action: none; /* Prevent default touch actions */
     overflow: hidden; /* Prevent scrolling */
 }
+
 
 .container {
     display: flex;
@@ -41,19 +42,20 @@ header {
 }
 
 main {
+    flex-grow: 1;
     display: none;
-    flex: 1;
-    width: 100%;
-    padding: 20px;
-    margin-top: 60px; /* Adjust based on header height */
-    margin-bottom: 60px; /* Adjust based on footer height */
-    overflow-y: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 main.active {
-    display: block;
+    display: flex; /* Only display the active tab */
+    overflow: hidden;
+    touch-action: none; /* Disable swipe gestures */
+    margin-top: 60px; /* Adjust based on header height */
+    margin-bottom: 60px; /* Adjust based on footer height */
 }
-
 footer {
     background-color: #f8f8f8;
     padding: 10px;
