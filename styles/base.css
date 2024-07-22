@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: #f0f0f0; /* Light background to make elements pop */
     color: black;
     font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     margin: 0;
