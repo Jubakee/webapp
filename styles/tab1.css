@@ -1,21 +1,40 @@
 /* Container for tab 1 */
 /* Container for the tabs in the footer */
-#tabs-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    background-color: #ddd; /* Adjust color as needed */
-    padding: 10px 0;
-}
 
 /* Container for tab 1 */
 #tab1-container {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 10px; /* Padding for spacing from header and footer */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr; /* Each row will take up an equal fraction of the height */
+    height: 80vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item:last-child {
+    justify-content: center; /* Center content vertically */
+}
+
+#bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 /* Container for the coin image */
@@ -45,6 +64,31 @@
 #clickable-coin img.clicked {
     transform: scale(1.1);
 }
+
+#energy-bar-container {
+    width: 100%; /* Ensure the energy bar takes up the full width available */
+    max-width: 300px; /* Optionally set a max width */
+    text-align: center;
+}
+
+#energy-bar {
+    background-color: #ccc;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#energy-fill {
+    background-color: #4caf50;
+    height: 100%;
+    width: 100%; /* Adjust this value dynamically if needed */
+}
+
+#energy-value-container {
+    margin-top: 5px; /* Adjust spacing as needed */
+}
+
 
 /* Feedback animation */
 .feedback {
