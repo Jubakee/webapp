@@ -69,7 +69,7 @@ function loadData() {
 function showAccumulatedCoinsPopup(accumulatedCoins) {
     const popup = document.createElement('div');
     popup.className = 'popup';
-    popup.innerText = `You earned ${formatNumber(accumulatedCoins)} coins while you were away!`;
+    popup.innerText = `You earned 💵 {formatNumber(accumulatedCoins)} coins while you were away!`;
     document.body.appendChild(popup);
 
     // Style the popup
