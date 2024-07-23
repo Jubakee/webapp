@@ -49,10 +49,41 @@ function loadData() {
     if (savedLastUpdate) {
         lastUpdateTime = parseInt(savedLastUpdate, 10);
         const elapsedTime = Date.now() - lastUpdateTime;
+
+        const elapsedTimeInMilliseconds = Date.now() - lastUpdateTime;
+        const elapsedTimeInSeconds = elapsedTimeInMilliseconds / 1000;
+        const roundedElapsedTimeInSeconds = Math.round(elapsedTimeInSeconds);
+        
+        // console.log(`Elapsed time: ${roundedElapsedTimeInSeconds} seconds.`);
+        
+        coins = coins + roundedElapsedTimeInSeconds;
+        showAccumulatedCoinsPopup(roundedElapsedTimeInSeconds)
         energy += Math.floor(elapsedTime / rechargeInterval) * energyRechargeRate;
         energy = Math.min(energy, maxEnergy); // Cap energy at max
         lastUpdateTime = Date.now() - (elapsedTime % rechargeInterval); // Adjust lastUpdateTime correctly
     }
 
     updateEnergyBar();
+}
+
+function showAccumulatedCoinsPopup(accumulatedCoins) {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerText = `You earned ${formatNumber(accumulatedCoins)} coins while you were away!`;
+    document.body.appendChild(popup);
+
+    // Style the popup
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = '#fff';
+    popup.style.padding = '20px';
+    popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    popup.style.zIndex = '1000';
+
+    // Remove the popup after a few seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
 }

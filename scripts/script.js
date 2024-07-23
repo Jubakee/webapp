@@ -9,6 +9,21 @@ window.addEventListener('load', () => {
 
 });
 
+
+// Save data before the app closes
+window.addEventListener('beforeunload', () => {
+    saveData();
+});
+
+// Save data when the app becomes hidden (minimized or switched tab)
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        saveData();
+    }
+});
+
+
+
 //#region Reset Game
 function resetGame() {
     coins = 0;

@@ -64,30 +64,6 @@
     transform: scale(1.1);
 }
 
-#energy-bar-container {
-    width: 100%; /* Ensure the energy bar takes up the full width available */
-    max-width: 300px; /* Optionally set a max width */
-    text-align: center;
-}
-
-#energy-bar {
-    background-color: #ccc;
-    height: 20px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#energy-fill {
-    background-color: #4caf50;
-    height: 100%;
-    width: 100%; /* Adjust this value dynamically if needed */
-}
-
-#energy-value-container {
-    margin-top: 5px; /* Adjust spacing as needed */
-}
-
 
 /* Feedback animation */
 .feedback {

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const incomeElement = document.getElementById('income');
+    //const incomeElement = document.getElementById('income');
     // const timeUnitSelect = document.getElementById('time-unit');
 
     let baseIncomePerSec = 1; // Default base income per second
@@ -15,12 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         year: 31536000 // approx 365 days
     };
 
-    function loadIncome() {
-        const savedIncome = localStorage.getItem('avatar_base_income');
-        if (savedIncome !== null) {
-            baseIncomePerSec = parseInt(savedIncome, 10);
-        }
-    }
+
+    startIncomeInterval();
 
     function formatNumber(number) {
         if (number >= 1e12) {
@@ -53,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
     // Load saved income and coins
-    loadIncome();
-    loadData();
+    // loadIncome();
+    // loadData();
 
     // Initialize the display and start the income interval
-    startIncomeInterval();
+
 });
