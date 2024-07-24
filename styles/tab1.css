@@ -14,7 +14,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr; /* Each row will take up an equal fraction of the height */
     height: 80vh; /* Full height of the viewport */
-    width: 100%; /* Full width of the viewport */
     margin-top: 60px;
 }
 

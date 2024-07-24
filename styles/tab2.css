@@ -1,0 +1,23 @@
+#tab2-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr; /* Each row will take up an equal fraction of the height */
+    margin-top: 180px;
+    margin-bottom: 20px;
+}
+
+.grid-item-2 {
+    background-color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
