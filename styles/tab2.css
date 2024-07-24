@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 #shop-container {
@@ -54,3 +54,10 @@
         padding: 10px; /* Adjust padding for very small screens 
     }
 } */
+
+.scrollable-element {
+    overflow-y: scroll;
+    height: 32rem;
+    font-size: 6.25rem;
+    border: 1px solid;
+  }
