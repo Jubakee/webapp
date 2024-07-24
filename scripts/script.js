@@ -4,6 +4,7 @@ window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', () => {
     //resetGame();
+    ensureDocumentIsScrollable();
     loadData();
     setInterval(rechargeEnergy, rechargeInterval);
 
@@ -43,7 +44,7 @@ function ensureDocumentIsScrollable() {
   const scrollableElement = document.querySelector(".shop-container");
   scrollableElement.addEventListener("touchstart", preventCollapse);
 
-  window.addEventListener("load", ensureDocumentIsScrollable);
+
 
 //#region Reset Game
 function resetGame() {
