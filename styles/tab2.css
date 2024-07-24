@@ -3,10 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px; /* Space between items */
-    margin-top: 100px;
-    padding-bottom: 30px; /* Adjust as needed */
-
-}
+    margin-top: 40px;}
 
 
 
