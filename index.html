@@ -1,49 +1,173 @@
-<html>
-  <head>
-    <style>
-      .scrollable-element {
-        overflow-y: scroll;
-        height: 32rem;
-        font-size: 6.25rem;
-        border: 1px solid;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="scrollable-element">
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
-      <div>Item 5</div>
-      <div>Item 6</div>
-      <div>Item 7</div>
-      <div>Item 8</div>
-      <div>Item 9</div>
-      <div>Item 10</div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Avatar</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/tab1.css">
+    <link rel="stylesheet" href="styles/tab2.css">
+
+
+</head>
+<body>
+    <header id="header">
+        <div id="level-container">
+            <span id="level-icon">🏆</span>
+            <span id="level-value">Lvl 1</span>
+        </div>
+        <div id="income-container">
+            <span id="income-icon">💵</span>
+            <span id="income" class="income-value">1 / sec</span>
+        </div>
+        <div id="coins-container">
+            <span id="coins-icon">💵</span>
+            <span id="coins" class="coins-value">0</span>
+        </div>
+    </header>
+
+    <main id="tab1" class="active"> 
+        <div id="tab1-container">
+            <div class="grid-container">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item">
+                    <div id="bottom-content">
+                        <div id="image-container">
+                            <button id="clickable-coin">
+                                <img src="./assets/coin.png" alt="coin">
+                            </button>
+                        </div>
+                
+                        <div id="energy-bar-container">
+                            <div id="energy-bar">
+                                <div id="energy-fill"></div>
+                            </div>
+                            <div id="energy-value-container">
+                                <span id="energy-value">
+                                    <span id="energy-count">1000</span> / <span id="max-energy">1000</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <main id="tab2">
+        <h2>Shop</h2>
+        <div class="shop-container">
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 100</p>
+            </div>
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 500</p>
+            </div>
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 1000</p>
+            </div>
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 5000</p>
+            </div>
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 10,000</p>
+            </div>
+            <div class="shop-grid-item">
+                <img src="assets/coin.png" alt="Item 1">
+                <p>Name</p>
+                <p>Description</p>
+                <p>💵 50,000</p>
+            </div>
+        </div>
+    </main>
+    
+    
+    
+    
+    <main id="tab3">    
+        <h2>Bag</h2>
+    </main>
+    <main id="tab4">
+        <h2>Avatar</h2>
+    </main>
+    <main id="tab5">
+        <h2>Rewards</h2>
+    </main>
+
+    <footer>
+        <div class="tab active-tab" onclick="showTab('tab1');" id="tab1-btn">
+            <span id="tab-icon">💰</span>
+            <span>Earn</span>
+        </div>
+        <div class="tab" onclick="showTab('tab2');" id="tab2-btn">
+            <span id="tab-icon">🛒</span>
+            <span>Shop</span>
+        </div>
+        <div class="tab" onclick="showTab('tab3');" id="tab3-btn">
+            <span id="tab-icon">🎒</span>
+            <span>Bag</span>
+        </div>
+        <div class="tab" onclick="showTab('tab4');" id="tab4-btn">
+            <span id="tab-icon">🧑</span>
+            <span>Avatar</span>
+        </div>
+        <div class="tab" onclick="showTab('tab5');" id="tab5-btn">
+            <span id="tab-icon">🏆</span>
+            <span>Rewards</span>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification hidden"></div>
+
     <script>
-      function ensureDocumentIsScrollable() {
-        const isScrollable =
-          document.documentElement.scrollHeight > window.innerHeight;
-        if (!isScrollable) {
-          document.documentElement.style.setProperty(
-            "height",
-            "calc(100vh + 1px)",
-            "important"
-          );
+        function ensureDocumentIsScrollable() {
+          const isScrollable =
+            document.documentElement.scrollHeight > window.innerHeight;
+          if (!isScrollable) {
+            document.documentElement.style.setProperty(
+              "height",
+              "calc(100vh + 1px)",
+              "important"
+            );
+          }
         }
-      }
-      function preventCollapse() {
-        if (window.scrollY === 0) {
-          window.scrollTo(0, 1);
+        function preventCollapse() {
+          if (window.scrollY === 0) {
+            window.scrollTo(0, 1);
+          }
         }
-      }
+  
+        const scrollableElement = document.querySelector(".shop-container");
+        scrollableElement.addEventListener("touchstart", preventCollapse);
+  
+        window.addEventListener("load", ensureDocumentIsScrollable);
+      </script>
 
-      const scrollableElement = document.querySelector(".scrollable-element");
-      scrollableElement.addEventListener("touchstart", preventCollapse);
+    <script src="scripts/script.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/coin.js"></script>
+    <script src="scripts/energy.js"></script>
+    <script src="scripts/tabs.js"></script>
+    <script src="scripts/income.js"></script>
+    <script src="scripts/shop.js"></script>
 
-      window.addEventListener("load", ensureDocumentIsScrollable);
-    </script>
-  </body>
+</body>
 </html>
