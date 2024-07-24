@@ -25,6 +25,7 @@ body {
 header {
     background-color: #f8f8f8;
     padding: 10px;
+    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;
@@ -52,6 +53,7 @@ main.active {
 footer {
     background-color: #f8f8f8;
     padding: 10px;
+    width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;

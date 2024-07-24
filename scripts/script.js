@@ -4,7 +4,6 @@ window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', () => {
     //resetGame();
-    ensureDocumentIsScrollable();
     loadData();
     setInterval(rechargeEnergy, rechargeInterval);
 
@@ -22,27 +21,6 @@ document.addEventListener('visibilitychange', () => {
         saveData();
     }
 });
-
-function ensureDocumentIsScrollable() {
-    const isScrollable =
-      document.documentElement.scrollHeight > window.innerHeight;
-   
-    if (!isScrollable) {
-      document.documentElement.style.setProperty(
-        "height",
-        "calc(100vh + 1px)",
-        "important"
-      );
-    }
-  }
-  function preventCollapse() {
-    if (window.scrollY === 0) {
-      window.scrollTo(0, 1);
-    }
-  }
-
-  const scrollableElement = document.querySelector(".shop-container");
-  scrollableElement.addEventListener("touchstart", preventCollapse);
 
 
 

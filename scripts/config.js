@@ -69,11 +69,7 @@ function loadData() {
 function showAccumulatedCoinsPopup(accumulatedCoins) {
     const popup = document.createElement('div');
     popup.className = 'popup';
-    popup.innerHTML = `
-        You earned 💵 <strong>${formatNumber(accumulatedCoins)}</strong> while you were away!
-        <br><br>
-        <button id="confirm-btn">Collect</button>
-    `;
+    popup.innerText = `You earned ${formatNumber(accumulatedCoins)} coins while you were away!`;
     document.body.appendChild(popup);
 
     // Style the popup
@@ -86,17 +82,8 @@ function showAccumulatedCoinsPopup(accumulatedCoins) {
     popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
     popup.style.zIndex = '1000';
 
-    // Style the confirm button
-    const confirmButton = document.getElementById('confirm-btn');
-    confirmButton.style.padding = '5px 10px';
-    confirmButton.style.backgroundColor = '#4CAF50';
-    confirmButton.style.color = '#fff';
-    confirmButton.style.border = 'none';
-    confirmButton.style.borderRadius = '5px';
-    confirmButton.style.cursor = 'pointer';
-
-    // Remove the popup when the confirm button is clicked
-    confirmButton.addEventListener('click', () => {
+    // Remove the popup after a few seconds
+    setTimeout(() => {
         popup.remove();
-    });
+    }, 2000);
 }
