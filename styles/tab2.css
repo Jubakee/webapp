@@ -1,30 +1,96 @@
 #tab2-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    overflow: hidden;
+    padding: 40px;
 }
 
-.scroll-container {
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows of equal height */
+    gap: 10px;
+}
+
+.grid-item-2 {
+    background-color: #f0f0f0;
+    text-align: center;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Container for the coin image */
+#item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the clickable coin */
+#item {
+    background: none;
+    border: 3px solid grey; /* Grey */
     padding: 10px;
 }
 
-.scroll-item {
-    flex: 0 0 auto;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Styling for the coin image */
+#item img {
+    width: 80%; /* Width relative to the viewport */
+    max-width: 80px; /* Maximum width */
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 5px;
 }
 
-#image-container {
+.item-window{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding: 10px;
 }
 
+#item-name{
+    font-weight: bold;
+    font-size: 14px;
+    /* text-decoration: underline; */
+}
+.item-desc{
+    font-style: italic;
+}
+
+#item-buy-btn{
+    margin-top: 10px;
+    background-color: #333333;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+    .grid-container-2 {
+        margin-top: 1360px;
+        padding-bottom: 40px;
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .grid-container-2 {
+        
+        margin-top: 400px;
+        padding-bottom: 40px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (min-width: 901px) {
+    .grid-container-2 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    }
+}
