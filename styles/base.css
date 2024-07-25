@@ -39,11 +39,12 @@ header {
 }
 
 main {
-    flex: 1;
+    flex-grow: 1;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 40px 10px 40px; /* Add padding to avoid overlap with header and footer */
 }
 
 main.active {
