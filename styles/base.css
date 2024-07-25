@@ -33,16 +33,17 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    height: 50px;
+
     z-index: 1; /* Ensure header is on top of other content */
 }
 
 main {
-    flex-grow: 1;
+    flex: 1;
     display: none;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding: 40px 10px 40px; /* Add padding to avoid overlap with header and footer */
 }
 
 main.active {
@@ -60,6 +61,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    height: 50px;
     z-index: 1; /* Ensure footer is on top of other content */
 }
 
