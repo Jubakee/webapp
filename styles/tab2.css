@@ -1,16 +1,12 @@
 #tab2-container {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 20px;
+
     justify-content: center;
 }
 
 .shop-item {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+
     width: 150px;
-    margin-right: 20px; /* Space between items */
     text-align: center;
 }
 
@@ -22,14 +18,5 @@
 #tab2 {
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 160px); /* Adjust based on header and footer height */
 }
 
-#tab2-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit browsers */
-}
-
-#tab2-container {
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-}
